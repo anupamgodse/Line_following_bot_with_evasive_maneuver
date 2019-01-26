@@ -81,6 +81,9 @@ Read ultrasonic sensor reading every 20ms and store in a gloabl variable
 task 2: update motor task
 Update motors every 100ms so that they decide how to navigate based on the reading of color senor and the sonar sensor. 
 
+task 4: touch sesnor task
+Read touch sensor every 20 ms to check if it is pressed and decide to stop/start the rover.
+
 Navigation strategy used:
 When on black line go straight.
 If off the line, try to search for line towards left for some degrees (we used 30) if not found then turn in opposite direction until the line is found and remember the direction of turn. As the path is circular next turns would be mostly in same direction unless the rover goes off the line on the other side, in which case the rover will again go wrong once and correct itself as above.
