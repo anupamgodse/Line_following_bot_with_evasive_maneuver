@@ -55,7 +55,7 @@ Number of frames(minor cycles) in a hyperperiod(major cycle) F = H/f = 200/20 = 
 
 Below is the schedule built for the 10 minor cyles i.e one hyperperiod which is repeated.
 
-        {touch_sensor, light_sensor, sonar_sensor, update_motor}, 
+	{touch_sensor, light_sensor, sonar_sensor, update_motor}, 
 	{touch_sensor, light_sensor, burn, burn}, 
 	{touch_sensor, light_sensor, sonar_sensor, burn}, 
 	{touch_sensor, light_sensor, burn, burn}, 
