@@ -83,4 +83,6 @@ Update motors every 100ms so that they decide how to navigate based on the readi
 
 Navigation strategy used:
 When on black line go straight.
-If off the line, try to search for line towards left for some degrees (we used 30)
+If off the line, try to search for line towards left for some degrees (we used 30) if not found then turn in opposite direction until the line is found and remember the direction of turn. As the path is circular next turns would be mostly in same direction unless the rover goes off the line on the other side, in which case the rover will again go wrong once and correct itself as above.
+We always circumvent obstacle from inside the circle. So it's just the first time the rover can go wrong to figure out which is side (left or right) is the inside of the circle. If it goes in wrong direction it will soon be off the white sheet which is when it will reverse and now go in opposite direction i.e inside the circle to circumvent the obstacle. 
+We circumvent the obstacle in sort of trapazoid shape i.e first turn away by 90, move forward then turn in opposite direction by 90 degrees and then move sort of parallel to the black line again turn towards the line and move until we find a line and go beyond to white surface and then turn until we find line again to get rover back on line.
