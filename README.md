@@ -40,13 +40,13 @@ Deciding the minor cycle i.e the frame size f
 
 2nd constraint: pi (for some i) should be evenly divisible by f i.e floor(pi/f) - pi/f = 0 We have many candidate values of f here like 1, 2, 4, 20, 40 etc.
 
-3rd constraint: 2f - gcd(pi, f) >= Di (deadline) Minimum value of deadline Di is 20.
+3rd constraint: 2f - gcd(pi, f) <= Di (deadline) Minimum value of deadline Di is 20.
 
-so 2f - gcd(pi, f) >= 20 (at least) so the values of f =1, 2, 4 (less than 20) can be eliminated
+so 2f - gcd(pi, f) <= 20 (at least) so the values of f =1, 2, 4 (less than 20) can be eliminated
 
 if f = 20, gcd(pi, f) = f for every task i
 
-so 2f - f >= f i.e f >= f is satisfied
+so 2f - f <= f i.e f <= f is satisfied
 
 So we choose f = 20ms
 
