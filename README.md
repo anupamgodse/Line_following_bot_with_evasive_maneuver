@@ -23,7 +23,9 @@ Task 4: touch sensor - Get touch sensor reading every 20ms to start/stop the rov
 
 
 
-Cyclic executive approach: We have 4 tasks to schedule with their respective periods.
+Cyclic executive approach: 
+
+We have 4 tasks to schedule with their respective periods.
 
 ti = (pi, ei) : ith task having pi period (also deadline) and ei execution time in ms.
 
@@ -42,7 +44,9 @@ Deciding the minor cycle i.e the frame size f
 
 3rd constraint: 2f - gcd(pi, f) <= Di (deadline) Minimum value of deadline Di is 20.
 
-so 2f - gcd(pi, f) <= 20 (at least) so the values of f =1, 2, 4 (less than 20) can be eliminated
+so 2f - gcd(pi, f) <= 20 so the values of f = greater than 20 can be eliminated
+
+we will first attempt f = 20ms because 20 evenly divides the periods of every task
 
 if f = 20, gcd(pi, f) = f for every task i
 
@@ -69,6 +73,8 @@ Below is the schedule built for the 10 minor cycles i.e one hyperperiod which is
 
 burn is a task which does nothing and just returns, used to fill the gaps in schedule if any.
 
+
+
 Description of each task:
 
 task 1: light sensor task Read color sensor reading every 20ms and store in a global variable.
@@ -79,4 +85,8 @@ task 2: update motor task Update motors every 100ms so that they decide how to n
 
 task 4: touch sensor task Read touch sensor every 20 ms to check if it is pressed and decide to stop/start the rover.
 
-Navigation strategy used: When on black line go straight. If off the line, try to search for line towards left for some degrees (we used 30) if not found then turn in the opposite direction until the line is found and remember the direction of the turn. As the path is circular next turns would be mostly in the same direction unless the rover goes off the line on the other side, in which case the rover will again go wrong once and correct itself as above. We always circumvent the obstacle from inside the circle. So it's just the first time the rover can go wrong to figure out which is side (left or right) is the inside of the circle. If it goes in the wrong direction it will soon be off the white sheet which is when it will reverse and now go in opposite direction i.e inside the circle to circumvent the obstacle. We circumvent the obstacle in sort of trapezoid shape i.e first turn away by 90, move forward then turn in opposite direction by 90 degrees and then move sort of parallel to the black line again turn towards the line and move until we find a line and go beyond to white surface and then turn until we find line again to get rover back online.
+
+
+Navigation strategy used: 
+
+When on black line go straight. If off the line, try to search for line towards left for some degrees (we used 30) if not found then turn in the opposite direction until the line is found and remember the direction of the turn. As the path is circular next turns would be mostly in the same direction unless the rover goes off the line on the other side, in which case the rover will again go wrong once and correct itself as above. We always circumvent the obstacle from inside the circle. So it's just the first time the rover can go wrong to figure out which is side (left or right) is the inside of the circle. If it goes in the wrong direction it will soon be off the white sheet which is when it will reverse and now go in opposite direction i.e inside the circle to circumvent the obstacle. We circumvent the obstacle in sort of trapezoid shape i.e first turn away by 90, move forward then turn in opposite direction by 90 degrees and then move sort of parallel to the black line again turn towards the line and move until we find a line and go beyond to white surface and then turn until we find line again to get rover back online.
