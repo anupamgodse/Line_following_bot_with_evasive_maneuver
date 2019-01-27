@@ -90,3 +90,21 @@ task 4: touch sensor task Read touch sensor every 20 ms to check if it is presse
 Navigation strategy used: 
 
 When on black line go straight. If off the line, try to search for line towards left for some degrees (we used 30) if not found then turn in the opposite direction until the line is found and remember the direction of the turn. As the path is circular next turns would be mostly in the same direction unless the rover goes off the line on the other side, in which case the rover will again go wrong once and correct itself as above. We always circumvent the obstacle from inside the circle. So it's just the first time the rover can go wrong to figure out which is side (left or right) is the inside of the circle. If it goes in the wrong direction it will soon be off the white sheet which is when it will reverse and now go in opposite direction i.e inside the circle to circumvent the obstacle. We circumvent the obstacle in sort of trapezoid shape i.e first turn away by 90, move forward then turn in opposite direction by 90 degrees and then move sort of parallel to the black line again turn towards the line and move until we find a line and go beyond to white surface and then turn until we find line again to get rover back online.
+
+
+Compilation and execution:
+
+Unzip the rover folder and copy it to "/ev3rt-hrp2/sdk/workspace/"
+cd to "/ev3rt-hrp2/sdk/workspace" which has a Makefile
+do "make app=rover" which will generate the executable file named "app" in "/ev3rt-hrp2/sdk/workspace"
+
+Copy "app" to the SD card having the ev3rt UImage file.
+Go to apps and select "app" to start it.
+
+Place the rover on the black line having color sensor to point onto the line.
+
+Start:
+Press the touch sensor to start the rover.
+
+Stop:
+Press the touch sensor to stop the rover.

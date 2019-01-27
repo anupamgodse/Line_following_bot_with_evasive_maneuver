@@ -1,4 +1,13 @@
 /**
+ This file was written by both members, since it comprises essentially all the code for the project. 
+
+ Group info:
+ angodse Anupam N Godse
+ bwmcdon2 Brayden W McDonald
+ 
+*/
+
+/**
  * This program was created by Anupam Godse and Brayden McDonald for CSC 714
  * It is based on the linetrace code that was provided, but does not use the same algorithm to follow the line
  */
