@@ -1,11 +1,3 @@
-Single Author info:
-
-angodse Anupam N Godse
-
-Group info:
-
-bwmcdon2 Brayden W McDonald
-
 # Line_following_bot_with_evasive_maneuver
 EV3 Mindstorms rover programmed on ev3rt
 
